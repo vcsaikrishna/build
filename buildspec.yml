@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+      docker: 18
+    commands:
+      - cp s3://bucketsai/kops /usr/local/bin/kops
+      - chmod +x /usr/local/bin/kops
+  build:
+    commands:
+      - kops version
+      - echo "sample" >> /usr/rt.log
