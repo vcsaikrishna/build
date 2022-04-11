@@ -6,7 +6,7 @@ phases:
       python: 3.8
       docker: 18
     commands:
-      - cp s3://bucketsai/kops /usr/local/bin/kops
+      - aws s3 cp s3://bucketsai/kops /usr/local/bin/kops
       - chmod +x /usr/local/bin/kops
   build:
     commands:
